@@ -10,7 +10,7 @@ A 1,500-person sleep and lifestyle dataset, loaded into PostgreSQL, cleaned, spl
 |---|---|
 | **Data** | 1,500 people × 13 attributes (sleep, lifestyle, health, occupation) |
 | **Database** | PostgreSQL — staging table, 2 dimension tables, 1 hub, 3 fact tables |
-| **Analysis** | 12 queries in `sql/04_analysis_queries.sql` |
+| **Analysis** | 13 queries in `sql/04_analysis_queries.sql` |
 | **Visualisation** | Tableau Public — bar, colour-encoded bar, packed bubbles, pie, side-by-side bar, line, dual-axis |
 | **Author** | Ajinkya (AJ) Kaduskar · [github.com/ajinkyakaduskar](https://github.com/ajinkyakaduskar) |
 
