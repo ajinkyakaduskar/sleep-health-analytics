@@ -1,6 +1,6 @@
 # Sleep Health Analytics
 
-**End-to-end analytics project: raw CSV → PostgreSQL (cleaned, normalized) → 12 SQL queries → 12 Tableau charts.**
+**End-to-end analytics project: raw CSV → PostgreSQL (cleaned, normalized) → 13 SQL queries → 13 Tableau charts.**
 
 ![Sleep Health Dashboard](images/dashboard.png)
 
@@ -105,7 +105,7 @@ The raw file had a combined `Blood Pressure` column ("129/85.85"). It was split 
 
 ---
 
-## The 12 charts
+## The 13 charts
 
 Each chart is titled as the question it answers. Chart type was chosen by the shape of the data: bars for comparing a measure across categories, a line for an ordered axis, a pie only where the slices are counts that sum to a whole, and two-measure forms where two queries shared a `GROUP BY`.
 
