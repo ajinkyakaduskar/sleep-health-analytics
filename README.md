@@ -1,6 +1,6 @@
 # Sleep Health Analytics
 
-**End-to-end analytics project: raw CSV → PostgreSQL (cleaned, normalized) → 13 SQL queries → 13 Tableau charts.**
+**End-to-end analytics project: raw CSV → PostgreSQL (cleaned, normalized) → 12 SQL queries → 12 Tableau charts.**
 
 ![Sleep Health Dashboard](images/dashboard.png)
 
@@ -10,17 +10,16 @@ A 1,500-person sleep and lifestyle dataset, loaded into PostgreSQL, cleaned, spl
 |---|---|
 | **Data** | 1,500 people × 13 attributes (sleep, lifestyle, health, occupation) |
 | **Database** | PostgreSQL — staging table, 2 dimension tables, 1 hub, 3 fact tables |
-| **Analysis** | 13 queries in `sql/04_analysis_queries.sql` |
+| **Analysis** | 12 queries in `sql/04_analysis_queries.sql` |
 | **Visualisation** | Tableau Public — bar, colour-encoded bar, packed bubbles, pie, side-by-side bar, line, dual-axis |
 | **Author** | Ajinkya (AJ) Kaduskar · [github.com/ajinkyakaduskar](https://github.com/ajinkyakaduskar) |
 
 ## Data source
 
 The raw file (`data/raw_sleep_health.csv`, 1,500 rows) follows the schema of the
-Sleep Health and Lifestyle Dataset published on Kaggle by uom190346a
-(https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset),
-[either: "extended to 1,500 rows for the original HINF5102 team project" / or:
-"downloaded from <actual source>"]. The dataset is synthetic; see Limitations.
+[Sleep Health and Lifestyle Dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
+published on Kaggle by uom190346a, extended from the original 374 rows to 1,500.
+The dataset is synthetic; see What the data can't tell you below
 
 ---
 
@@ -113,7 +112,7 @@ The raw file had a combined `Blood Pressure` column ("129/85.85"). It was split 
 
 ---
 
-## The 13 charts
+## The 12 charts
 
 Each chart is titled as the question it answers. Chart type was chosen by the shape of the data: bars for comparing a measure across categories, a line for an ordered axis, a pie only where the slices are counts that sum to a whole, and two-measure forms where two queries shared a `GROUP BY`.
 
@@ -127,7 +126,7 @@ Bar, bands in ordinal order. Yes, modestly: 5.53 → 5.95 → 6.00. Most of the 
 
 ### Q3 · Do stressed people sleep less?
 ![Q3](images/q03_sleep_by_stress_band.png)
-Bar, ordinal. Yes — 8.47 h (Low) → 7.92 h (Medium) → 7.35 h (High). Q12 shows the same relationship at full 1–10 resolution.
+Bar, ordinal. Yes — 8.47 h (Low) → 7.92 h (Medium) → 7.35 h (High). Q11 shows the same relationship at full 1–10 resolution
 
 ### Q4 · Does BMI affect sleep quality?
 ![Q4](images/q04_sleep_quality_by_bmi.png)
@@ -135,11 +134,11 @@ Bar, ordered Underweight → Obese. Barely: 5.95 / 5.87 / 5.77 / 5.77. Overweigh
 
 ### Q5 · Average resting heart rate by sleep disorder
 ![Q5](images/q05_heart_rate_by_disorder.png)
-Bar. Range 73.6–76.4 bpm across all five groups — no meaningful separation. Feeds Q13.
+Bar. Range 73.6–76.4 bpm across all five groups — no meaningful separation. Feeds Q12.
 
 ### Q6 · Average daily steps by sleep disorder
 ![Q6](images/q06_steps_by_disorder.png)
-Bar. None 6,226 · Insomnia 6,159 · RLS 5,850 · Narcolepsy 5,833 · Sleep Apnea 5,803. Feeds Q13.
+Bar. None 6,226 · Insomnia 6,159 · RLS 5,850 · Narcolepsy 5,833 · Sleep Apnea 5,803. Feeds Q12.
 
 ### Q7 · Does physical activity reduce stress?
 ![Q7](images/q07_stress_by_activity.png)
@@ -157,12 +156,12 @@ Pie, five slices, sorted clockwise from largest. The only pie in the set — it 
 ![Q10](images/q10_activity_sleep_stress.png)
 Side-by-side bar (`Measure Names` on colour). Q2 and Q7 merged into one query with two aggregates. Both measures are on a 1–10 scale, so they can share an axis. Sleep quality rises with activity; stress does not fall.
 
-### Q12 · How does sleep duration change as stress rises?
-![Q12](images/q12_sleep_by_stress_level.png)
+### Q11 · How does sleep duration change as stress rises?
+![Q11](images/q12_sleep_by_stress_level.png)
 Line, stress 1–10 on a continuous axis. Q3 without the banding. Steady decline from 8.81 h to 7.02 h with one small bump at level 4. The strongest relationship in the dataset.
 
-### Q13 · Do sleep disorders show up in heart rate and daily activity?
-![Q13](images/q13_disorders_heart_steps.png)
+### Q12 · Do sleep disorders show up in heart rate and daily activity?
+![Q12](images/q13_disorders_heart_steps.png)
 Dual-axis: heart rate as bars (left axis, bpm), daily steps as a line (right axis). Q5 and Q6 merged. The scales differ by two orders of magnitude, so the axes are independent — synchronising them would flatten the line to nothing. Heart rate is flat; steps separate the groups.
 
 ---
