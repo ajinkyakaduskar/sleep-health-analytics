@@ -14,6 +14,14 @@ A 1,500-person sleep and lifestyle dataset, loaded into PostgreSQL, cleaned, spl
 | **Visualisation** | Tableau Public — bar, colour-encoded bar, packed bubbles, pie, side-by-side bar, line, dual-axis |
 | **Author** | Ajinkya (AJ) Kaduskar · [github.com/ajinkyakaduskar](https://github.com/ajinkyakaduskar) |
 
+## Data source
+
+The raw file (`data/raw_sleep_health.csv`, 1,500 rows) follows the schema of the
+Sleep Health and Lifestyle Dataset published on Kaggle by uom190346a
+(https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset),
+[either: "extended to 1,500 rows for the original HINF5102 team project" / or:
+"downloaded from <actual source>"]. The dataset is synthetic; see Limitations.
+
 ---
 
 ## Key findings
