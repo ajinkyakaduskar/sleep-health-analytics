@@ -19,7 +19,7 @@ A 1,500-person sleep and lifestyle dataset, loaded into PostgreSQL, cleaned, spl
 The raw file (`data/raw_sleep_health.csv`, 1,500 rows) follows the schema of the
 [Sleep Health and Lifestyle Dataset](https://www.kaggle.com/datasets/uom190346a/sleep-health-and-lifestyle-dataset)
 published on Kaggle by uom190346a, extended from the original 374 rows to 1,500.
-The dataset is synthetic; see What the data can't tell you below
+The dataset is synthetic; see What the data can't tell you below.
 
 ---
 
@@ -126,7 +126,7 @@ Bar, bands in ordinal order. Yes, modestly: 5.53 → 5.95 → 6.00. Most of the 
 
 ### Q3 · Do stressed people sleep less?
 ![Q3](images/q03_sleep_by_stress_band.png)
-Bar, ordinal. Yes — 8.47 h (Low) → 7.92 h (Medium) → 7.35 h (High). Q11 shows the same relationship at full 1–10 resolution
+Bar, ordinal. Yes — 8.47 h (Low) → 7.92 h (Medium) → 7.35 h (High). Q11 shows the same relationship at full 1–10 resolution.
 
 ### Q4 · Does BMI affect sleep quality?
 ![Q4](images/q04_sleep_quality_by_bmi.png)
